@@ -40,7 +40,9 @@ public class LockedMeMain {
                             break;
                         }
                         case "3" : {
-                            System.out.println("Searching for a file");
+                            System.out.println("Enter file name");
+                            String fileName = sc.next();
+                            LockedMeFileOps.searchFile(fileName);
                             break;
                         }
                         case "4" : {

@@ -8,6 +8,7 @@ public class LockedMeFileOps {
 
     public static final String root = System.getProperty("user.dir")+"\\root";
 
+    private static boolean fnf = true;
 
     public static void init(){
         File dir = new File(root);
@@ -56,6 +57,31 @@ public class LockedMeFileOps {
             System.out.println("File deleted successfully");
         } else {
             System.out.println("File not found. Please check the file name and path");
+        }
+    }
+
+    public static void searchFile(String fileName,String directoryPath) {
+        File rootfolder = new File(directoryPath);
+        File[] files = rootfolder.listFiles();
+        if(files!=null){
+            for(File file: files){
+                if(file.isDirectory()){
+                    searchFile(fileName,file.getAbsolutePath());
+                }else {
+                    if(file.getName().equalsIgnoreCase(fileName)){
+                        fnf = false;
+                        System.out.println("File found at location " + file.getAbsolutePath());
+                    }
+                }
+            }
+        }
+    }
+
+    public static void searchFile(String fileName){
+        fnf = true;
+        searchFile(fileName,root);
+        if(fnf){
+            System.out.println("File Not found in application root directory or any of its sub directories");
         }
     }
 }
