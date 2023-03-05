@@ -14,4 +14,8 @@ public class LockedmeConstants {
             "#*******************#####################################*******************#" + System.lineSeparator() +
             "#***************************************************************************#" + System.lineSeparator() +
             "#############################################################################";
+
+    public static String MAIN_MENU =
+            "Please choose an option from below main menu:" + System.lineSeparator() +
+            "1.Retrieving the file names in an ascending order" + System.lineSeparator();
 }
