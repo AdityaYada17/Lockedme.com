@@ -61,6 +61,10 @@ public class LockedMeMain {
                     }
                     break;
                 }
+                case "3": {
+                    runMainMenu = false;
+                    break;
+                }
                 default :  {
                     System.out.println("Invalid Input");
                 }

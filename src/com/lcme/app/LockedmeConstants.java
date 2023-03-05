@@ -18,7 +18,8 @@ public class LockedmeConstants {
     public static String MAIN_MENU =
             "Please choose an option from below main menu:" + System.lineSeparator() +
             "1.Retrieving the file names in an ascending order" + System.lineSeparator() +
-            "2.Business Operations";
+            "2.Business Operations" + System.lineSeparator() +
+            "3.Close the application";
 
     public static String BUSINESS_MENU =
             "Please choose an option from below business menu: " + System.lineSeparator() +
