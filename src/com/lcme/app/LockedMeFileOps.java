@@ -47,7 +47,15 @@ public class LockedMeFileOps {
             System.out.println("An error occurred while creating the file.");
             e.printStackTrace();
         }
-
     }
 
+    public static void deleteFile(String fileNameWithRelativePath) {
+        String absoluteFilePath = root + "\\" + fileNameWithRelativePath;
+        File file = new File(absoluteFilePath);
+        if(file.delete()){
+            System.out.println("File deleted successfully");
+        } else {
+            System.out.println("File not found. Please check the file name and path");
+        }
+    }
 }

@@ -28,14 +28,15 @@ public class LockedMeMain {
                         case "1" : {
                             System.out.println("Enter file name with relative path");
                             String fileNameWithRelativePath = sc.next();
-
                             System.out.println("Enter file contents");
                             String fileContent = sc.next();
                             LockedMeFileOps.addFile(fileNameWithRelativePath,fileContent);
                             break;
                         }
                         case "2" : {
-                            System.out.println("Deleting a file");
+                            System.out.println("Enter file name with relative path");
+                            String fileNameWithRelativePath = sc.next();
+                            LockedMeFileOps.deleteFile(fileNameWithRelativePath);
                             break;
                         }
                         case "3" : {
