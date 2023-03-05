@@ -23,9 +23,15 @@ public class LockedMeMain {
                     System.out.println(LockedmeConstants.BUSINESS_MENU);
                     if(sc.hasNext()){
                     option = sc.next();
+                    sc.nextLine();
                     switch (option){
                         case "1" : {
-                            System.out.println("Adding a file");
+                            System.out.println("Enter file name with relative path");
+                            String fileNameWithRelativePath = sc.next();
+
+                            System.out.println("Enter file contents");
+                            String fileContent = sc.next();
+                            LockedMeFileOps.addFile(fileNameWithRelativePath,fileContent);
                             break;
                         }
                         case "2" : {

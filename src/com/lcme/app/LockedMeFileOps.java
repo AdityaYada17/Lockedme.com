@@ -1,6 +1,8 @@
 package com.lcme.app;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class LockedMeFileOps {
 
@@ -26,6 +28,26 @@ public class LockedMeFileOps {
                 }
             }
         }
+    }
+
+    public static void addFile(String fileNameWithRelativePath,String fileContent){
+        try{
+            String absoluteFilePath = root + "\\" + fileNameWithRelativePath;
+            File file = new File(absoluteFilePath);
+            file.getParentFile().mkdirs();
+            if(file.createNewFile()){
+                FileWriter writer = new FileWriter(file);
+                writer.write(fileContent);
+                writer.close();
+                System.out.println("File added successfully and path relative to application root directory where file created is " + file.getParentFile().getAbsolutePath().substring(root.length()+1) );
+            }else{
+                System.out.println("File " + file.getAbsolutePath().substring(root.length()+1) + " already exists");
+            }
+        } catch (Exception e) {
+            System.out.println("An error occurred while creating the file.");
+            e.printStackTrace();
+        }
+
     }
 
 }
