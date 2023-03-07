@@ -35,13 +35,13 @@ public class LockedMeFileOps {
             String absoluteFilePath = root + "\\" + fileNameWithRelativePath;
             File file = new File(absoluteFilePath);
             file.getParentFile().mkdirs();
-            if(file.createNewFile()){
+            if (file.createNewFile()){
                 FileWriter writer = new FileWriter(file);
                 writer.write(fileContent);
                 writer.close();
-                System.out.println("File added successfully and path relative to application root directory where file created is " + file.getParentFile().getAbsolutePath().substring(root.length()+1) );
-            }else{
-                System.out.println("File " + file.getAbsolutePath().substring(root.length()+1) + " already exists");
+                System.out.println("File added successfully at relative path " + fileNameWithRelativePath );
+            } else{
+                System.out.println("File " + fileNameWithRelativePath + " already exists");
             }
         } catch (Exception e) {
             System.out.println("An error occurred while creating the file.");
@@ -69,7 +69,7 @@ public class LockedMeFileOps {
                 }else {
                     if(file.getName().equalsIgnoreCase(fileName)){
                         fnf = false;
-                        System.out.println("File found at location " + file.getAbsolutePath());
+                        System.out.println("File found at location " + file.getAbsolutePath().substring(root.length()+1));
                     }
                 }
             }
