@@ -1,8 +1,5 @@
 package com.lcme.app;
 
-import com.sun.source.tree.SwitchTree;
-
-import java.lang.invoke.SwitchPoint;
 import java.util.Scanner;
 
 public class LockedMeMain {
